@@ -1,0 +1,879 @@
+* {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+:root {
+  --primary-color: #f3f8ff;
+  /* Background kiri */
+  --secondary-color: #7de2fc;
+  /* Background kanan */
+  --color-text: #231942;
+  /* Warna teks */
+  --color-button-fill: #162d6b;
+  /* Tombol Masuk */
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--color-text);
+}
+
+.hero-img {
+  max-width: 80%;
+  height: auto;
+}
+
+/* Login User Start */
+/* Style Utama Login Page */
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+/* Kolom Kiri */
+.login-kiri {
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-konsel-title {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  color: var(--color-text);
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  z-index: 10;
+  margin-bottom: 1rem;
+}
+
+/* Kolom Kanan */
+.login-kanan {
+  /* Bisa pakai gradient agar lebih modern */
+  background: #7de2fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+/* Warna teks login */
+.login-title,
+.login-subtitle,
+.login-desc {
+  color: var(--color-text);
+}
+
+.login-box {
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Input */
+.login-input {
+  height: 52px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  color: var(--color-text);
+  padding-left: 20px;
+}
+
+.login-input:focus {
+  outline: 2px solid var(--color-button-fill);
+}
+
+/* Tombol Masuk */
+.btn-masuk {
+  width: 177px;
+  height: 52px;
+  background-color: #162d6b;
+  /* Warna Fill */
+  color: #ffffff;
+  /* Warna Teks */
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  /* sudut membulat */
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-masuk:hover {
+  background-color: #2b4991;
+}
+
+/* Link Lupa Password */
+.lupa-password-link {
+  color: var(--color-button-fill);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.lupa-password-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsif */
+@media (max-width: 992px) {
+  .btn-masuk {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-kiri {
+    display: none;
+  }
+
+  .login-kanan {
+    width: 100%;
+    padding: 3rem 1.5rem;
+    height: 100vh;
+  }
+
+  .lupa-password-link {
+    color: var(--color-text) !important;
+  }
+}
+
+/* Login User End */
+
+/* Reset Password Start */
+.reset {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+/* Kolom Kiri */
+.reset-kiri {
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.reset-kanan {
+  /* Bisa pakai gradient agar lebih modern */
+  background: #7de2fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+}
+
+/* Warna teks login */
+.reset-title,
+.reset-subtitle,
+.reset-desc {
+  color: var(--color-text);
+}
+
+.reset-box {
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Input */
+.reset-input {
+  height: 52px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  color: var(--color-text);
+  padding-left: 20px;
+}
+
+.reset-input:focus {
+  outline: 2px solid var(--color-button-fill);
+}
+
+/* Tombol Keluar */
+.btn-reset {
+  width: 177px;
+  height: 52px;
+  background-color: #162d6b;
+  /* Warna Fill */
+  color: #ffffff;
+  /* Warna Teks */
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  /* sudut membulat */
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+  background-color: #2b4991;
+}
+
+/* Tombol kembali ke login */
+.btn-back-login {
+  color: var(--color-button-fill);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.btn-back-login:hover {
+  color: #2b4991;
+  /* warna hover */
+  text-decoration: underline;
+}
+
+/* Atur ukuran ikon feather */
+.btn-back-login svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 992px) {
+  .btn-reset {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .reset-kiri {
+    display: none;
+  }
+
+  .reset-kanan {
+    width: 100%;
+    padding: 3rem 1.5rem;
+    height: 100vh;
+  }
+}
+
+.reset-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+/* Reset Password End */
+
+/* Mengirim link Verif Lewat E-mail Start */
+.send {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+/* Kolom Kiri */
+.send-kiri {
+  background-color: var(--primary-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-img {
+  max-width: 420px;
+}
+
+.send-kanan {
+  /* Bisa pakai gradient agar lebih modern */
+  background: #7de2fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+/* Warna teks login */
+.send-title,
+.send-subtitle,
+.send-desc {
+  color: var(--color-text);
+}
+
+.send-box {
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+.send-illustration {
+  max-width: 160px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Input */
+.send-input {
+  height: 52px;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  font-size: 1rem;
+  color: var(--color-text);
+  padding-left: 20px;
+}
+
+.send-input:focus {
+  outline: 2px solid var(--color-button-fill);
+}
+
+/* Tombol Keluar */
+.btn-send {
+  width: 177px;
+  height: 52px;
+  background-color: #162d6b;
+  /* Warna Fill */
+  color: #ffffff;
+  /* Warna Teks */
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  /* sudut membulat */
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.btn-send:hover {
+  background-color: #2b4991;
+}
+
+/* Tombol kembali ke login */
+.btn-back-login {
+  color: var(--color-button-fill);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.btn-back-login:hover {
+  color: #2b4991;
+  /* warna hover */
+  text-decoration: underline;
+}
+
+/* Atur ukuran ikon feather */
+.btn-back-login svg {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 992px) {
+  .btn-send {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .send-kiri {
+    display: none;
+  }
+
+  .send-kanan {
+    width: 100%;
+    padding: 3rem 1.5rem;
+    height: 100vh;
+  }
+}
+
+.send-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+/* Mengirim link Verif Lewat E-mail End */
+
+/* Style Sidebar Start */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #eaeaea;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transition: all 0.3s ease-in-out;
+  z-index: 1050;
+  padding: 1rem 0.5rem;
+  width: 70px;
+  /* default tertutup */
+}
+
+/* Sidebar dalam keadaan terbuka */
+.sidebar.open {
+  width: 220px;
+}
+
+/* Logo */
+.sidebar .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #001963;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.sidebar.open .logo {
+  display: block;
+}
+
+/* Tombol Toggle */
+.btn-toggle-sidebar {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.btn-toggle-sidebar i {
+  width: 24px;
+  height: 24px;
+  stroke: #001963;
+}
+
+/* Navigasi */
+.sidebar .nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.sidebar .nav-item {
+  list-style: none;
+  margin-bottom: 0.75rem;
+  padding: 5px 0 !important;
+}
+
+.sidebar .nav-item:active {
+  background-color: #7de2fc;
+}
+
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #001963;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: #7de2fc;
+  font-weight: 500;
+  padding: 10px !important;
+}
+
+/* Icon style */
+.sidebar i {
+  stroke: #001963;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Teks menu disembunyikan ketika sidebar tertutup */
+.sidebar .menu-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.open .menu-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Desktop View (≥992px) ===== */
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    width: 70px;
+  }
+
+  .sidebar.open {
+    width: 220px;
+  }
+
+  /* Hover membuka sidebar hanya di desktop */
+  .sidebar:hover {
+    width: 220px;
+  }
+
+  .sidebar:hover .menu-text,
+  .sidebar:hover .logo {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+
+  .toggle-bar {
+    display: none !important;
+  }
+}
+
+/* ===== Tablet View (≥576px and <992px) ===== */
+@media (max-width: 991.98px) and (min-width: 576px) {
+  .sidebar {
+    position: fixed;
+    width: 60px;
+    height: 100vh;
+    border-right: 1px solid #eaeaea;
+    transition: width 0.3s ease;
+    background: #fff;
+  }
+
+  .sidebar.open {
+    width: 200px;
+  }
+
+  /* Tampilkan tombol toggle */
+  .toggle-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .sidebar .menu-text {
+    display: none;
+  }
+
+  .sidebar.open .menu-text {
+    display: inline;
+  }
+}
+
+/* ===== Smartphone View (<576px) ===== */
+@media (max-width: 575.98px) {
+  .sidebar {
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    background: #fff;
+    border-right: 1px solid #eaeaea;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .sidebar.open {
+    width: 200px;
+  }
+
+  .toggle-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Sembunyikan teks menu di mobile jika tertutup */
+  .sidebar .menu-text {
+    display: none;
+  }
+
+  .sidebar.open .menu-text {
+    display: inline;
+  }
+
+  /* Sidebar menutupi seluruh layar di mobile */
+  .sidebar.open {
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+  }
+
+  /* Tambah background semi transparan saat sidebar terbuka */
+  body.sidebar-open::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+}
+
+/* Style Sidebar End */
+
+/* Style Navbar Start */
+.custom-navbar {
+  background-color: #7de2fc;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.profile {
+  position: relative;
+}
+
+.profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  line-height: 1.2;
+  color: #001963;
+}
+
+.profile-info .status {
+  font-size: 12px;
+  color: #333;
+}
+
+/* Dropdown */
+/* tombol ikon (wrapper) */
+.btn-icon {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* pastikan svg/ikon mewarisi ukuran & warna */
+.btn-icon i,
+.btn-icon svg {
+  stroke: #001963;
+  width: 28px;
+  height: 28px;
+}
+
+.dropdown-menu-custom {
+  padding: 0.5rem 1rem !important;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 6px 0;
+  width: 220px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  z-index: 2000;
+}
+
+/* item dropdown sebagai button agar event handler React bekerja */
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: #001963;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background: #f5f8ff;
+}
+
+.dropdown-menu-custom a {
+  display: block;
+  padding: 8px 15px;
+  color: #001963;
+  font-size: 14px;
+  text-decoration: none;
+  /* transition: background 0.2s; */
+}
+
+.dropdown-menu-custom a:hover {
+  background: #f5f5f5;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .btn-icon i,
+  .btn-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-info p {
+    font-size: 14px;
+  }
+
+  .profile-info .status {
+    font-size: 11px;
+  }
+
+  .profile-img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Style Navbar End */
+
+/* Style Tampilan Dashboard Start */
+
+/* Style Tampilan Dashboard End */
+
+/* Style Table untuk menampilkan data Start */
+
+/* Style Table untuk menampilkan data End */
+
+/* Style Form Inset dan Update Data Aplikasi Start */
+.overlay-form {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity .3s ease;
+  /* ❗ MATIKAN visibility hidden */
+}
+
+.overlay-form.fade-in {
+  opacity: 1;
+}
+
+.overlay-form.fade-out {
+  opacity: 0;
+}
+
+
+/* 🔹 Container form */
+.form-container {
+  animation: popIn 0.3s ease;
+}
+
+/* 🔹 Animasi kecil saat form muncul */
+@keyframes popIn {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  pointer-events: auto;
+  z-index: 100000;
+}
+
+/* Style Form Edit Profile end*/
+
+/* Style Button update dan delete Start */
+.action-container {
+  position: relative;
+  width: fit-content;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.btn-icon i {
+  width: 18px;
+  height: 18px;
+  color: #444;
+  transition: 0.2s;
+}
+
+.btn-icon:hover i {
+  color: #0d6efd;
+}
+
+.action-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+}
+
+.action-item {
+  background: none;
+  border: none;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-item:hover {
+  background: #f5f5f5;
+}
+
+/* Style Button update dan delete Delet */
+
+/* Style Popup Delete Start */
+
+/* Style Popup Delete End */
+
+.layout-container {
+  padding: 2rem 4rem;
+}
+
+.is-invalid {
+  border: 1px solid red !important;
+}

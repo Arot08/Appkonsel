@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String?
+  userRoleID Int
+  createdAt DateTime @default(now())
+}
+
+model ms_application {
+  id            Int               @id @default(autoincrement())
+  title         String
+  image         String?           // simpan filename atau URL
+  tautanapp     String?
+  type          String?
+  status        Int?
+  availability  Int?
+  developer     Int?
+  category      Int?
+  desc          String?
+
+  // relations
+  lk_availability lk_availability? @relation(fields: [availability], references: [id])
+  lk_developer    lk_developer?    @relation(fields: [developer], references: [id])
+  lk_category     lk_category?     @relation(fields: [category], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model lk_availability {
+  id   Int    @id @default(autoincrement())
+  name String
+  msApplications ms_application[]
+}
+
+model lk_developer {
+  id   Int    @id @default(autoincrement())
+  name String
+  msApplications ms_application[]
+}
+
+model lk_category {
+  id   Int    @id @default(autoincrement())
+  name String
+  msApplications ms_application[]
+}
+
+model ms_information {
+  id            Int               @id @default(autoincrement())
+  tautanlink    String?
+  image         String         // simpan filename atau URL
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
